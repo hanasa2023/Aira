@@ -1,0 +1,69 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model Channel {
+  id        String    @id @default(cuid())
+  type      Int
+  name      String?
+  parent_id String?
+  Message   Message[]
+}
+
+model Guild {
+  id      String        @id @default(cuid())
+  name    String?
+  avatar  String?
+  members GuildMember[]
+  Message Message[]
+}
+
+model GuildMember {
+  id        String    @id @default(cuid())
+  user      User      @relation(fields: [userId], references: [id])
+  userId    String
+  nick      String?
+  avatar    String?
+  joined_at Int?
+  message   Message[]
+  guild     Guild?    @relation(fields: [guildId], references: [id])
+  guildId   String?
+}
+
+model GuildRole {
+  id   String  @id @default(cuid())
+  name String?
+}
+
+model Message {
+  id         String       @id @default(cuid())
+  content    String
+  channel    Channel?     @relation(fields: [channelId], references: [id])
+  guild      Guild?       @relation(fields: [guildId], references: [id])
+  member     GuildMember? @relation(fields: [memberId], references: [id])
+  user       User?        @relation(fields: [userId], references: [id])
+  created_at Int?
+  updated_at Int?
+  channelId  String?
+  guildId    String?
+  memberId   String?
+  userId     String?
+}
+
+model User {
+  id          String        @id @default(cuid())
+  name        String?
+  nick        String?
+  avatar      String?
+  is_bot      Boolean?
+  GuildMember GuildMember[]
+  Message     Message[]
+}
