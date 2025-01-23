@@ -6,13 +6,14 @@ const createWindow = () => {
     height: 646,
     titleBarStyle: 'hidden',
     hasShadow: true,
-    ...(process.platform !== 'darwin' ? {
-      titleBarOverlay: {
-        color: '#ffffffff',
-        symbolColor: '#74b1be',
-        height: 20
-      }
-    } : {})
+    ...(process.platform !== 'darwin'
+      ? {
+          titleBarOverlay: {
+            color: '#93c5fd',
+            height: 28,
+          },
+        }
+      : {}),
   })
   win.loadURL(JSON.parse(process.env.__NUXT_DEV__!).proxy.url)
 }

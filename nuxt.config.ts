@@ -4,6 +4,7 @@ export default defineNuxtConfig({
   ssr: false,
   devtools: { enabled: true },
   srcDir: 'src/',
+
   modules: [
     'nuxt-electron',
     '@nuxtjs/tailwindcss',

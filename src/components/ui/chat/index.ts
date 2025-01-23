@@ -1,0 +1,7 @@
+export { default as IAvatar } from './IAvatar.vue'
+export { default as IButton } from './IButton.vue'
+export { default as IMessageContent } from './IMessageContent.vue'
+export { default as IMessageInputArea } from './IMessageInputArea.vue'
+export { default as INavGroup } from './INavGroup.vue'
+export { default as ISearchbar } from './ISearchbar.vue'
+export { default as ISidebar } from './ISidebar.vue'

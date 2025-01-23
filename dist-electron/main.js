@@ -1,22 +1,21 @@
-import { app as e, BrowserWindow as r } from "electron";
+import { app as e, BrowserWindow as t } from "electron";
 const o = () => {
-  new r({
+  new t({
     width: 960,
     height: 646,
     titleBarStyle: "hidden",
     hasShadow: !0,
     ...process.platform !== "darwin" ? {
       titleBarOverlay: {
-        color: "#ffffffff",
-        symbolColor: "#74b1be",
-        height: 20
+        color: "#93c5fd",
+        height: 28
       }
     } : {}
   }).loadURL(JSON.parse(process.env.__NUXT_DEV__).proxy.url);
 };
 e.whenReady().then(() => {
   o(), e.on("activate", () => {
-    r.getAllWindows().length === 0 && o();
+    t.getAllWindows().length === 0 && o();
   });
 });
 e.on("window-all-closed", () => {
