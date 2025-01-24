@@ -52,14 +52,14 @@ import { Icon } from '@iconify/vue'
                 <ResizablePanelGroup direction="vertical">
                   <!-- Chat Content main -->
                   <ResizablePanel :default-size="62">
-                    <IMessageContent />
+                    <ChatContent />
                   </ResizablePanel>
                   <ResizableHandle />
                   <ResizablePanel
                     :default-size="38"
                     class="min-h-[148px] max-h-80"
                   >
-                    <IMessageInputArea />
+                    <ChatInputArea />
                   </ResizablePanel>
                 </ResizablePanelGroup>
               </ResizablePanel>

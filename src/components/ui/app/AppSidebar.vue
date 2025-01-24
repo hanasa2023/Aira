@@ -9,15 +9,17 @@ import { Icon } from '@iconify/vue'
     <div class="flex flex-col items-center justify-start flex-grow">
       <p class="pt-2 pb-4">Aira</p>
       <IAvatar />
-      <INavGroup />
+      <AppNavbar />
     </div>
     <div class="flex items-center justify-center">
       <div class="flex flex-col items-center justify-center py-2">
         <IButton class="rounded-sm hover:bg-secondary">
-          <Icon
-            icon="solar:hamburger-menu-broken"
-            class="size-6 text-primary"
-          />
+          <NuxtLink to="/settings">
+            <Icon
+              icon="solar:hamburger-menu-broken"
+              class="size-6 text-primary"
+            />
+          </NuxtLink>
         </IButton>
       </div>
     </div>
