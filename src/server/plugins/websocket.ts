@@ -3,8 +3,10 @@ import { LoginSatatus, Opcode } from '~/enums'
 import { IEvent, Op } from '~/models'
 
 export default defineNitroPlugin((nitroApp) => {
-  console.log('App mounted')
-  const wss = new WebSocketServer({ port: 8000, path: '/v1/events' })
+  const wss = new WebSocketServer({
+    port: 8000,
+    path: '/v1/events',
+  })
   console.log('WebSocket Server is running on ws://localhost:8000/v1/events')
 
   wss.on('connection', (ws) => {
