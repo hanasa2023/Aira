@@ -21,3 +21,12 @@ export enum Opcode {
   READY,
   META,
 }
+
+export enum Protocal {
+  SATORI = 'Satori',
+}
+
+export enum CommMethod {
+  WEBSOCKET = 'WebSocket Server',
+  HTTP = 'Web Hook',
+}

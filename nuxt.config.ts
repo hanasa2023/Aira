@@ -4,12 +4,16 @@ export default defineNuxtConfig({
   ssr: false,
   devtools: { enabled: true },
   srcDir: 'src/',
+  components: {
+    dirs: ['src/components'],
+  },
 
   modules: [
     'nuxt-electron',
     '@nuxtjs/tailwindcss',
     'shadcn-nuxt',
     '@pinia/nuxt',
+    'pinia-plugin-persistedstate/nuxt',
   ],
   electron: {
     build: [

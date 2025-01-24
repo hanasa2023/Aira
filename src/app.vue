@@ -11,7 +11,7 @@ import '~/asserts/css/tailwind.css'
     <!-- Main Page -->
     <div class="h-screen w-screen flex">
       <!-- Sidebar -->
-      <ISidebar />
+      <AppSidebar />
       <!-- Page -->
       <NuxtPage />
     </div>
